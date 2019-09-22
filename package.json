@@ -2,7 +2,7 @@
   "name": "@trajanmcgill/requestanimationframe",
   "version": "1.0.0",
   "description": "A more robust browser polyfill for requestAnimationFrame()",
-  "main": "requestAnimationFrame.js",
+  "main": "Source/requestAnimationFrame.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/trajanmcgill/requestAnimationFrame.js.git"
