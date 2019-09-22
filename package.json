@@ -17,5 +17,13 @@
   "bugs": {
     "url": "https://github.com/trajanmcgill/requestAnimationFrame.js/issues"
   },
-  "homepage": "https://github.com/trajanmcgill/requestAnimationFrame.js#readme"
+  "homepage": "https://github.com/trajanmcgill/requestAnimationFrame.js#readme",
+  "devDependencies": {
+    "grunt": "^0.4.2",
+    "grunt-cli": "^0.1.11",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-copy": "^0.5.0",
+    "grunt-contrib-jshint": "^0.8.0",
+    "grunt-contrib-uglify": "^0.3.2"
+  }
 }
