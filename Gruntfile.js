@@ -34,7 +34,7 @@ module.exports = function(grunt)
 			{
 				options: { sequences: false, verbose: true, warnings: true },
 
-				requestAnimationFrame: { options: { banner: "/*! requestAnimationFrame.js */\n" }, src: ["Source/requestAnimationFrame.js"], dest: "Build/requestAnimationFrame.min.js" },
+				requestAnimationFrame: { options: { banner: "/*! requestAnimationFrame.js */", screwIE8: false }, src: ["Source/requestAnimationFrame.js"], dest: "Build/requestAnimationFrame.min.js" },
 				requestAnimationFrame_DeUglify: { options: { beautify: true }, src: ["Build/requestAnimationFrame.min.js"], dest: "Build/requestAnimationFrame.min.max.js" }
 			} // end uglify task definitions
 		});
