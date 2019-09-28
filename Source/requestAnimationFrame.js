@@ -10,6 +10,48 @@
 	var nextID = 0, callbackAddQueue = {}, callbackProcessingQueue = {},
 		timeoutID = null, lastFrameTime = 0, callbackCount = 0, firstNewID = 0;
 
+	// _doProcessing(): Internal function that processes the queue
+	// and makes all the callbacks.
+	function _doProcessing()
+	{
+		var requestID, currentCallback;
+
+		timeoutID = null;
+		lastFrameTime = (new Date()).getTime();
+
+		callbackProcessingQueue = callbackAddQueue;
+		callbackAddQueue = {};
+		firstNewID = nextID;
+
+		for (requestID in callbackProcessingQueue)
+		{
+			if (callbackProcessingQueue.hasOwnProperty(requestID))
+			{
+				currentCallback = callbackProcessingQueue[requestID];
+				delete callbackProcessingQueue[requestID];
+				callbackCount--;
+
+				// Exactly what value is passed to the callback function
+				// may still be changing in the spec.
+				try { currentCallback(lastFrameTime); }
+				catch (e) { } // Ignoring exceptions here is part of the spec
+			}
+		}
+	}
+
+	// _cancelFrom(): Internal function that removes an outstanding frame request
+	// from a particular queue.
+	function _cancelFrom(queue, requestID)
+	{
+		delete queue[requestID];
+		callbackCount--;
+		if (callbackCount < 1 && timeoutID !== null)
+		{
+			window.clearTimeout(timeoutID);
+			timeoutID = null;
+		}
+	}
+
 	// request(): This function is exported as window.requestAnimationFrame if it
 	// isn't already defined. Adds a new animation frame callback to the queue of
 	// requests waiting for the next frame. Returns an integer that uniquely
@@ -41,48 +83,6 @@
 			_cancelFrom(callbackAddQueue, requestID);
 		else if (callbackProcessingQueue.hasOwnProperty(requestID))
 			_cancelFrom(callbackProcessingQueue, requestID);
-	}
-
-	// _cancelFrom(): Internal function that removes an outstanding frame request
-	// from a particular queue.
-	function _cancelFrom(queue, requestID)
-	{
-		delete queue[requestID];
-		callbackCount--;
-		if (callbackCount < 1 && timeoutID !== null)
-		{
-			window.clearTimeout(timeoutID);
-			timeoutID = null;
-		}
-	}
-
-	// _doProcessing(): Internal function that processes the queue
-	// and makes all the callbacks.
-	function _doProcessing()
-	{
-		var requestID, currentCallback;
-
-		timeoutID = null;
-		lastFrameTime = (new Date()).getTime();
-
-		callbackProcessingQueue = callbackAddQueue;
-		callbackAddQueue = {};
-		firstNewID = nextID;
-
-		for (requestID in callbackProcessingQueue)
-		{
-			if (callbackProcessingQueue.hasOwnProperty(requestID))
-			{
-				currentCallback = callbackProcessingQueue[requestID];
-				delete callbackProcessingQueue[requestID];
-				callbackCount--;
-
-				// Exactly what value is passed to the callback function
-				// may still be changing in the spec.
-				try { currentCallback(lastFrameTime); }
-				catch (e) { } // Ignoring exceptions here is part of the spec
-			}
-		}
 	}
 
 	// Export the substitute requestAnimationFrame() and cancelAnimationFrame()
