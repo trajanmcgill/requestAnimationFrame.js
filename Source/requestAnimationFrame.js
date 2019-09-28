@@ -1,4 +1,4 @@
-﻿// requestAnimationFrame.js: 2013-03-23 by Trajan McGill.
+﻿// requestAnimationFrame.js: 2013-03-23 by Trajan McGill. Updated 2019-09-28.
 // This code is released into the public domain; or, if such a declaration is
 // not effective in your jurisdiction, it is licensed to you perpetually for
 // any use in any form; in either case without any guarantee or warranty.
