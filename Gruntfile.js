@@ -14,19 +14,19 @@ module.exports = function(grunt)
 					noarg: true, noempty: true, nonew: true, quotmark: "double", smarttabs: true, strict: true, trailing: true, undef: true, unused: true, validthis: true
 				},
 
-				requestAnimationFrame: { src: ["Source/requestAnimationFrame.js"] }
+				requestAnimationFrame: { src: ["src/requestAnimationFrame.js"] }
 			}, // end jshint task definitions
 
 
 			clean:
 			{
-				requestAnimationFrame: ["Build/**/*"]
+				requestAnimationFrame: ["dist/**/*"]
 			}, // end clean task definitions
 
 
 			copy:
 			{
-				requestAnimationFrame: { src: ["Source/requestAnimationFrame.js"], dest: "Build/requestAnimationFrame.js" }
+				requestAnimationFrame: { src: ["src/requestAnimationFrame.js"], dest: "dist/requestAnimationFrame.js" }
 			}, // end copy task defitions
 
 
@@ -34,8 +34,8 @@ module.exports = function(grunt)
 			{
 				options: { sequences: false, verbose: true, warnings: true },
 
-				requestAnimationFrame: { options: { banner: "/*! requestAnimationFrame.js */", screwIE8: false }, src: ["Source/requestAnimationFrame.js"], dest: "Build/requestAnimationFrame.min.js" },
-				requestAnimationFrame_DeUglify: { options: { beautify: true }, src: ["Build/requestAnimationFrame.min.js"], dest: "Build/requestAnimationFrame.min.max.js" }
+				requestAnimationFrame: { options: { banner: "/*! requestAnimationFrame.js */", screwIE8: false }, src: ["src/requestAnimationFrame.js"], dest: "dist/requestAnimationFrame.min.js" },
+				requestAnimationFrame_DeUglify: { options: { beautify: true }, src: ["dist/requestAnimationFrame.min.js"], dest: "dist/requestAnimationFrame.min.max.js" }
 			} // end uglify task definitions
 		});
 	

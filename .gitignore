@@ -61,4 +61,4 @@ typings/
 .next
 
 # project build output
-Build/
+dist/
