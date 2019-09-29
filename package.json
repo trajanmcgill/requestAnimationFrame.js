@@ -1,28 +1,25 @@
 {
-  "name": "@trajanmcgill/requestanimationframe",
-  "version": "1.0.0",
-  "description": "A more robust browser polyfill for requestAnimationFrame()",
-  "main": "src/requestAnimationFrame.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/trajanmcgill/requestAnimationFrame.js.git"
-  },
-  "keywords": [
-    "JavaScript",
-    "polyfill",
-    "requestAnimationFrame"
-  ],
-  "author": "Trajan McGill <code@trajanmcgill.com>",
-  "license": "Unlicense",
-  "bugs": {
-    "url": "https://github.com/trajanmcgill/requestAnimationFrame.js/issues"
-  },
-  "homepage": "https://github.com/trajanmcgill/requestAnimationFrame.js#readme",
-  "devDependencies": {
-    "grunt": "^1.0.4",
-    "grunt-contrib-clean": "^2.0.0",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-jshint": "^2.1.0",
-    "grunt-contrib-uglify": "^4.0.1"
-  }
+	"name": "@trajanmcgill/requestanimationframe",
+	"version": "1.0.0",
+	"description": "A more robust browser polyfill for requestAnimationFrame()",
+	"main": "src/requestAnimationFrame.js",
+	"repository": {	"type": "git", "url": "git+https://github.com/trajanmcgill/requestAnimationFrame.js.git" },
+	"keywords":
+	[
+		"javascript",
+		"polyfill",
+		"requestAnimationFrame"
+	],
+	"author": "Trajan McGill <code@trajanmcgill.com>",
+	"license": "Unlicense",
+	"bugs": { "url": "https://github.com/trajanmcgill/requestAnimationFrame.js/issues" },
+	"homepage": "https://github.com/trajanmcgill/requestAnimationFrame.js#readme",
+	"devDependencies":
+	{
+		"grunt": "^1.0.4",
+		"grunt-contrib-clean": "^2.0.0",
+		"grunt-contrib-copy": "^1.0.0",
+		"grunt-contrib-jshint": "^2.1.0",
+		"grunt-contrib-uglify": "^4.0.1"
+	}
 }
