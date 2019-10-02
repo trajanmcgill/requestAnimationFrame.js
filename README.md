@@ -17,7 +17,8 @@ Because most (all?) of the other ones have a hidden flaw: they can't handle mult
 ***
 
 ### _Plain code download:_
-ADD
+[requestAnimationFrame.js](https://github.com/trajanmcgill/requestAnimationFrame.js/releases/download/v1.0.0-beta1/requestAnimationFrame.js) (full version)  
+[requestAnimationFrame.min.js](https://github.com/trajanmcgill/requestAnimationFrame.js/releases/download/v1.0.0-beta1/requestAnimationFrame.min.js) (minified version)
 
 ### _With npm:_
 ADD
