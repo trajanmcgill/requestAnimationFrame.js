@@ -1,6 +1,6 @@
 {
 	"name": "@trajanmcgill/requestanimationframe",
-	"version": "1.0.0-beta1",
+	"version": "1.0.0",
 	"description": "A more robust browser polyfill for requestAnimationFrame()",
 	"main": "src/requestAnimationFrame.js",
 	"repository": {
