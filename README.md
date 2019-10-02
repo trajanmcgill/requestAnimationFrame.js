@@ -16,28 +16,29 @@ Because most (all?) of the other ones have a hidden flaw: they can't handle mult
 ## How do I get it?
 ***
 
-### _Plain code download:_
-[requestAnimationFrame.js](https://github.com/trajanmcgill/requestAnimationFrame.js/releases/download/v1.0.0-beta1/requestAnimationFrame.js) (full version)  
-[requestAnimationFrame.min.js](https://github.com/trajanmcgill/requestAnimationFrame.js/releases/download/v1.0.0-beta1/requestAnimationFrame.min.js) (minified version)
+### _Plain code download (just the source code):_
+[requestAnimationFrame.js](https://github.com/trajanmcgill/requestAnimationFrame.js/releases/download/v1.0.0/requestAnimationFrame.js) (full version)  
+[requestAnimationFrame.min.js](https://github.com/trajanmcgill/requestAnimationFrame.js/releases/download/v1.0.0/requestAnimationFrame.min.js) (minified version)
 
-### _With npm:_
-ADD
+### _With npm: (for use as a dependency inside another npm-based project)_
+```
+npm install @trajanmcgill/requestanimationframe
+```
 
-### _For development:_
+### _For development or local building of requestAnimationFrame.js itself:_
 - Prerequisites:
 	1. [git](https://git-scm.com/)
 	2. [npm](https://www.npmjs.com/)
 - Setup:
-	1. Clone from GitHub:
+	1. First, clone from GitHub:
 		```
 		git clone https://github.com/trajanmcgill/requestAnimationFrame.js.git
 		```
-	2. Get the linting and build tools and run them.
-		In the project directory:
+	2. Next, get the linting and build tools and run them. Move inside the newly created project directory and run:
 		```
 		npm install
 		```
-		Source files can be found in the `src` directory; distributable files will be deposited in `dist`.
+		The `npm install` will automatically run the build process. Source files can be found in the `src` directory; distributable files will be deposited in `dist`.
 - Rebuilding: In the project directory:
 	```
 	npm run prepare
